@@ -10,7 +10,7 @@ $(document).ready(function(){
 		$(this).find('audio').hide();
 		a_tag.click(function(){
 			$(global_player).siblings('h4').text($(this).attr('alt'));
-			global_player.prop('src',$(this).parent().find('audio > source').first().attr('src'));
+			global_player.prop('src',$(this).parents('.audio').find('audio > source').first().attr('src'));
 			global_player.trigger('load');
 			global_player.trigger('play');
 		});

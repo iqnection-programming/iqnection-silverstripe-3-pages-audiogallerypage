@@ -28,6 +28,11 @@
 			
 			$mp3file->setAllowedExtensions(array('mp3'));
 			$oggfile->setAllowedExtensions(array('ogg'));
+			$mp3file->setFolderName('Uploads/audio');
+			$oggfile->setFolderName('Uploads/audio');
+			
+			$this->extend('updateCMSFields',$fields);
+			
 			return $fields;
 		}
 		
@@ -103,6 +108,7 @@
 				new GridFieldDetailForm()				
 			);
 			$fields->addFieldToTab('Root.Content.AudioFiles', new GridField('Audios','Audios',$this->Audios(),$audios_config));
+			$this->extend('updateCMSFields',$fields);
 			return $fields;
 		}			
 	}
