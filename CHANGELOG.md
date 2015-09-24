@@ -2,6 +2,9 @@
 # Change Log
 
 
+## [0.0.5]
+- Bug fixes
+
 ## [0.0.4]
 - Added ability to extend getCMSfields
 - set default upload folder for audio files

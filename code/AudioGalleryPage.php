@@ -32,7 +32,6 @@
 			$oggfile->setFolderName('Uploads/audio');
 			
 			$this->extend('updateCMSFields',$fields);
-			
 			return $fields;
 		}
 		
@@ -68,7 +67,7 @@
 			
 			if ($mp3_url || $ogg_url)
 			{
-				$html .= "<audio controls='controls' preload='metadata'>";
+				$html .= "<audio controls='controls' preload='auto'>";
 				if ($mp3_url) $html .= "<source src='{$mp3_url}' type='audio/mpeg'>";
 				if ($ogg_url) $html .= "<source src='{$ogg_url}' type='audio/ogg'>";
 //				$html .= "Your browser does not support the audio tag.";
@@ -80,8 +79,8 @@
 		
 		public function canCreate($member = null) { return true; }
 		public function canDelete($member = null) { return true; }
-		public function canEdit($member = null) { return true; }
-		public function canView($member = null) { return true; }
+		public function canEdit($member = null)   { return true; }
+		public function canView($member = null)   { return true; }
 	}
 	
 	class AudioGalleryPage extends Page
