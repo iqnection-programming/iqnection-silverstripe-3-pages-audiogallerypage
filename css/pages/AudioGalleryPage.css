@@ -13,6 +13,6 @@ audio							{ }
 .audio .play_btn span.dot.off	{ opacity:0; }
 .audio .download				{ font-size:11px; padding-top:3px; clear:both; text-align:right; }
 	
-#global_player					{ position:fixed; bottom:0; left:0; width:100%; background:rgba(0,0,0,0.7); padding: 10px 2%; }
+#global_player					{ position:fixed; bottom:0; left:0; width:100%; background:rgba(0,0,0,0.7); padding: 10px 2%; display:none; }
 #global_player > audio			{ display:block; width:100%; margin: 0 auto; max-width:700px; }
 #global_player > h4				{ color:#FFF; margin: 0 auto 6px; width:100%; max-width:700px; font-family:Arial, sans-serif; }

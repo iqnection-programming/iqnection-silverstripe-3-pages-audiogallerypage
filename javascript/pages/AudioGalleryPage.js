@@ -7,6 +7,7 @@ $(document).ready(function(){
 	$("div.audio").each(function(i){
 		var a_tag = $(this).find('a.play_btn');
 		a_tag.click(function(){
+			global_player.show();
 			showLoading(a_tag);
 			$(global_player).find('h4').text($(this).attr('alt'));
 			global_player.find('audio').prop('src',$(this).attr('data-file'));
