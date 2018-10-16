@@ -1,6 +1,9 @@
-## Package: iqnection-silverstripe-3-pages-audiogallerypage
+## Package: iqnection-silverstripe-pages-audiogallerypage
 # Change Log
 
+
+## [2.0.0]
+- Updated for SilverStripe 4
 
 ## [0.0.5]
 - Bug fixes
