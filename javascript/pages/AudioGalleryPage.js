@@ -19,29 +19,13 @@
 		});
 	});
 	
-	var a_tag_html;
 	window.showLoading = function(a_tag){
-		a_tag_html = a_tag.html();
-		a_tag.empty().prepend('Loading <span class="dot off">.</span><span class="dot off">.</span><span class="dot off">.</span>');
-		setInterval(function(){
-			window.loadingStep(a_tag);
-		},500);
-	};
-	window.loadingStep = function(a_tag){
-		if (!$(a_tag).find('span.dot.off').length){
-			a_tag.find('span.dot').addClass('off');
-			return;
-		}
-		$(a_tag).find('span.dot.off').first().removeClass('off');
+		a_tag.addClass('loading');
 	};
 	window.hideLoading = function(audio,a_tag){
 		if (audio !== 'undefined' && audio[0].readyState !== 4){
-			setTimeout(function(){
-				window.hideLoading(audio,a_tag);
-			},500);
-			return false;
+			a_tag.removeClass('loading');
 		}
-		a_tag.empty().html(a_tag_html);
 	};
 	window.showAudioTime = function(audio){
 		if (audio !== 'undefined' && audio[0].readyState !== 4){

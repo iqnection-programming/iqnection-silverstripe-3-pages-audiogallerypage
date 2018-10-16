@@ -17,8 +17,13 @@ class Audio extends DataObject
 	];
 	
 	private static $many_many = [
-		"MP3File" => File::class,
-		"OGGFile" => File::class,
+		"MP3Files" => File::class,
+		"OGGFiles" => File::class,
+	];
+	
+	private static $owns = [
+		'MP3Files',
+		'OGGFiles'
 	];
 	
 	private static $belongs_many_many = [
@@ -34,14 +39,17 @@ class Audio extends DataObject
 		$fields = parent::getCMSFields();
 		$fields->removeByName([
 			'FileTracking',
-			'LinkTracking'
+			'LinkTracking',
+			'AudioGalleryPage',
+			'MP3Files',
+			'OGGFiles'
 		]);
 
-		$fields->replaceField('MP3File',Injector::inst()->create(Forms\FileHandlField::class,"MP3File", "MP3 File")
+		$fields->addFieldToTab('Root.Main',Injector::inst()->create(Forms\FileHandleField::class,"MP3Files", "MP3 File")
 			->setAllowedExtensions(['mp3'])
 			->setFolderName('Uploads/audio')
 			->setIsMultiUpload(false) );
-		$fields->replaceField('OGGFile',Injector::inst()->create(Forms\FileHandlField::class,"OGGFile", "OGG File")
+		$fields->addFieldToTab('Root.Main',Injector::inst()->create(Forms\FileHandleField::class,"OGGFiles", "OGG File")
 			->setAllowedExtensions(array('ogg'))
 			->setFolderName('Uploads/audio')
 			->setIsMultiUpload(false) );

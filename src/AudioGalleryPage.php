@@ -26,7 +26,7 @@ class AudioGalleryPage extends \Page
 		$fields->addFieldToTab('Root.Audio Files', Forms\GridField\GridField::create(
 			'Audios', 
 			'Audio Files', 
-			$this->Audio(), 
+			$this->Audios(), 
 			Forms\GridField\GridFieldConfig_RelationEditor::create(50)
 				->addComponents(new GridFieldSortableRows('SortOrder'))
 		));
